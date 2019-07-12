@@ -1,0 +1,28 @@
+1) Les variables var ont été toutes remplacées par des variables let
+
+2) les lignes 
+
+let message = document.createElement('section');
+message.setAttribute('class', 'chat-message');
+message.textContent = data[x].name + ": " + data[x].message;
+messages.appendChild(message);
+messages.insertBefore(message, messages.firstChild);
+
+seraient remplacés par un truc du style :
+
+let message = document.createElement('section');
+message.setAttribute('class', 'chat-message col-10 offset-1 row');
+let date = document.createElement("p");
+date.setAttribute('class', 'date-message offset-1 col-4');
+date.innerHTML="?" //ceux qui font le back sauront quoi mettre
+let pseudo = document.createElement("p");
+pseudo.setAttribute('class', 'pseudo-message offset-1 col-4');
+pseudo.innerHTML=data[x].name;
+let messageBody=document.createElement("p");  
+messageBody.setAttribute('class', 'body-message col-12');  
+messageBody.innerHTML=data[x].message;
+message.appendChild(pseudo);
+message.appendChild(date);      
+message.appendChild(messageBody); 
+messages.appendChild(message);
+messages.insertBefore(message, messages.firstChild);

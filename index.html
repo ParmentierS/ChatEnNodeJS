@@ -1,40 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <title>MongoChat</title>
-    <style>
-        #messages{height:300px;}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3 col-sm-12">
-                <h1 class="text-center">
-                    MongoChat 
-                    <button id="clear" class="btn btn-danger">Clear</button>
-                </h1>
-                <div id="status"></div>
-                <div id="chat">
-                    <input type="text" id="username" class="form-control" placeholder="Enter name...">
-                    <br>
-                    <div class="card">
-                        <div id="messages" class="card-block">
+  <head>
+    <title>Chat Becode</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                        </div>
-                    </div>
-                    <br>
-                    <textarea id="textarea" class="form-control" placeholder="Enter message..."></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+  </head>
+  <!--goodbye stupid scrollbar-->
+  <body class="container-fluid">
+    <!--no other container since I don't like them-->
+    <header class="row">                
+        <h1 class="col-md-6 offset-md-3 col-sm-12 text-center">
+            Chat Becode
+        </h1>
+        <section id="status"></section>
+    </header>
+    <main class="row">
+        <section class="d-flex flex-column justify-content-around col-md-8 offset-md-2 col-sm-12" id="chat">
+            <section id="chatHeader">
+                 <input type="text" id="username" class="form-control" placeholder="Entrez votre nom">
+            </section>
+            <section id="chatBody">
+                <article class="card">
+                    <section id="messages" class="card-block">
+                        <section class="chat-message-me col-10 offset-1 row">
+                            <p class="pseudo-message offset-1 col-4">Moi</p>
+                            <p class="date-message offset-1 col-4">Aujourd'hui</p>
+                            <p class="body-message col-12">Message d'inititialisation :
+                                Bienvenue sur le chat de Becode \o/
+                            </p>
+                        </section>
+                    </section>
+                </article>
+                <textarea id="textarea" class="form-control" placeholder="Entrez votre message"></textarea>
+            </section>
+            <section id="chatFooter">
+                <button id="clear" class="btn btn-danger col-2 offset-5">Vider le chat</button>
+            </section>
+        </section>
+        <section id="login-github" class="col-12 row">
+            <input type="text" id="username" class="form-control offset-2 col-6" placeholder="Entrez votre adresse mail github">    
+            <button id="btn-login" class="btn btn-success col-2">Connexion</button>
+        </section>
+    </main>
+    <footer>Copyright : Menozzi Lorenzo, Flamme Arianne, Wuilquot Jean-David, Parmentier Sébastien</footer>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    
+    <!--decomment to use external script instead-->
+    <!--<script src="client.js"></script>-->
 
     <script>
         (function(){
