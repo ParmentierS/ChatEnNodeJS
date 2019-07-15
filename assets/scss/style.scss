@@ -2,9 +2,16 @@ body
 {
     background-color : #75B1A9;
 }
-#chat
+#clear
+{
+    margin-top : 10px;
+    margin-bottom : 10px;
+    background-color : #b17579;
+}
+#btn-login
 {
 
+    background-color : #b19175;
 }
 #messages
 {
@@ -24,6 +31,8 @@ body
         background-color:#4F6457;
         border-radius: 10px 20px / 20px;
         color:white;
+        margin-top : 5px;
+        
         
         img
         {
@@ -35,9 +44,10 @@ body
     {
         display:flex;
         flex-direction : row;
-        background-color:rgb(117, 100, 57);
+        background-color:#64514f;
         border-radius: 10px 20px / 20px;
         color:white;
+        margin-top : 5px;
         
         img
         {
@@ -45,4 +55,10 @@ body
             width : 30px;
         }
     }
+}
+footer
+{
+    margin-top : 10px;
+    text-align : center;
+    font-weight : 900;
 }
